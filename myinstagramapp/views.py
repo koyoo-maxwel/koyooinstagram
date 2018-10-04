@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse, Http404
-from .models import Profile,Comment
+from .models import Profile,Comment,User
 
 # Create your views here.
 
