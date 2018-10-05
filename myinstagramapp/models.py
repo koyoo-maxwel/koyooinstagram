@@ -13,10 +13,7 @@ class Profile(models.Model):
     profile_pic = models.ImageField(
         upload_to='profile/')
     time_stamp = models.DateTimeField(auto_now_add=True, null=True)
-   
 
-
-   
     def __str__(self):
         return self.first_name
 
@@ -36,9 +33,9 @@ class Profile(models.Model):
         profile = cls.objects.filter(user__username__icontains=query)
         return profile
 
-        
-
     # my images registerd here
+
+
 class Image(models.Model):
     image = models.ImageField(upload_to='images/')
     caption = models.TextField(blank=True)
@@ -46,10 +43,9 @@ class Image(models.Model):
     time = models.DateTimeField(auto_now_add=True)
     comment = models.CharField(max_length=200)
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
- 
+
     class Meta:
         ordering = ['-time']
-   
 
     def save_images(self):
         self.save()
@@ -58,8 +54,10 @@ class Image(models.Model):
         return self.likes.count()
 
     def save_comment(self):
-            self.save()
+        self.save()
 
+    def __str__(self):
+        return self.caption
 
 
 class Follow(models.Model):
@@ -75,4 +73,3 @@ class Follow(models.Model):
     def unfollow(cls, current_user, new_follow):
         friend, created = cls.objects.get_or_create(current_user=current_user)
         friend.follower.remove(new_follow)
-

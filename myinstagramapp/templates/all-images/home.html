@@ -2,10 +2,12 @@
 {% block content %}
 {{ block.super}}
 
-{% for image_item in image%}
+{% for image_item in images%}
 
-<img src="{{image_item.image.url}}" alt="">
-<p>{{image.name}}</p>
+<div class="container" style=" padding-top: 130px; padding-top: 115px; margin-top: 30px">
+<img src="{{image_item.image.url}}" alt="" style="max-width:300px"; >
+<p>{{image_item.caption}}</p>
+</div>
 
 {%endfor%}
 

@@ -5,6 +5,8 @@ from . import views
 
 urlpatterns=[
     url('^$',views.home,name = 'home'),
+    #url('^$',views.profile,name = 'profile'),
+
 ]
 
 

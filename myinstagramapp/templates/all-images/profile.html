@@ -1,0 +1,14 @@
+{%extends 'all-images/base.html'%}
+{% block content %}
+{{ block.super}}
+
+{% for profile_item in profile%}
+
+<div class="container" style=" padding-top: 130px; padding-top: 115px; margin-top: 30px">
+
+<p>{{profile_item.profile}}</p>
+</div>
+
+{%endfor%}
+
+{%endblock%}
