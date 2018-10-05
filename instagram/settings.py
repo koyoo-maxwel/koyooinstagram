@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+<<<<<<< HEAD
 SECRET_KEY = 'a3&l&a*(=j=_=0po7gp2#1$$5gc!#18s1tsrv9ijr(7@%edw#h'
+=======
+SECRET_KEY = 'i@6*)ggt6$pv*474+1zq=fkwaayy8d=qgqk!+9tpf_1gh-#f2h'
+>>>>>>> 17c903fda6abe705eb4a6d56cae1934e5b8375ed
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +35,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<< HEAD
+=======
+    'myinstagramapp.apps.MyinstagramappConfig',
+    'bootstrap3',
+>>>>>>> 17c903fda6abe705eb4a6d56cae1934e5b8375ed
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -62,6 +71,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+<<<<<<< HEAD
+=======
+                'django.template.context_processors.media'
+>>>>>>> 17c903fda6abe705eb4a6d56cae1934e5b8375ed
             ],
         },
     },
@@ -78,10 +91,18 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'instagram',
         'USER': 'student',
+<<<<<<< HEAD
     'PASSWORD':'1209',
     }
 }
 
+=======
+        'PASSWORD':'1209',
+    }
+}
+
+
+>>>>>>> 17c903fda6abe705eb4a6d56cae1934e5b8375ed
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
@@ -119,3 +140,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
+=======
+STATICFILES_DIRS = [
+os.path.join(BASE_DIR, "static")
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> 17c903fda6abe705eb4a6d56cae1934e5b8375ed
