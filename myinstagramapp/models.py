@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-from django.db import models
-
-# Create your models here.
-=======
 from django.contrib.auth.models import User
 from django.db import models
 import datetime as dt
@@ -78,4 +73,3 @@ class Follow(models.Model):
     def unfollow(cls, current_user, new_follow):
         friend, created = cls.objects.get_or_create(current_user=current_user)
         friend.follower.remove(new_follow)
->>>>>>> 17c903fda6abe705eb4a6d56cae1934e5b8375ed
