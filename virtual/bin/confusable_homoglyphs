@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/home/student/Documents/moringa school projects/Moringa Core/Django Module/week2 IP/virtual/bin/python" "$0" "$@"
+'''exec' "/home/student/Documents/moringa school projects/Moringa Core/Django Module/koyoo maxwell/instagram-clone/virtual/bin/python" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
