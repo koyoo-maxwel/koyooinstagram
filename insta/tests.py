@@ -7,11 +7,11 @@ class ProfileTestClass(TestCase):
     #setup method
     def setUp(self):
         #set up user class
-        self.new_user = User(username="liz",email="elizabethichanga@yahoo.com")
+        self.new_user = User(username="koyoo",email="koyoomaxwel@gmail.com")
         self.new_user.save()
         #set up profile class
-        self.Profile(bio="Feeling natural",user=self.new_user)
-        self.save_profile()
+        self.profile=Profile(bio="Feeling natural",user=self.new_user)
+        self.profile.save_profile()
 
         # self.user.add(self.liz)
 
@@ -21,36 +21,35 @@ class ProfileTestClass(TestCase):
 
     #testing instance
     def test_instance(self):
-        self.assertTrue(isinstance(self.Profile))
+        self.assertTrue(isinstance(self.profile, Profile))
 
     def test_save_profile(self):
         profiles = Profile.objects.all()
         self.assertTrue(len(profiles)>0)
 
     def test_delete_profile(self):
-        self.save_profile()
-        self.delete_profile()
+        self.profile.save_profile()
+        self.profile.delete_profile()
         profiles = Profile.objects.all()
         self.assertTrue(len(profiles)<1)
 
     def test_find_profile(self):
-        self.save_profile()
+        self.profile.save_profile()
         me = Profile.objects.all()
-        profiles = Profile.find_profile('liz')
+        profiles = Profile.find_profile('koyoo')
         self.assertEqual(profiles,profiles)
 
     def test_get_profile(self):
-        self.save_profile()
+        self.profile.save_profile()
         prof = Profile.get_profile()
         self.assertEqual(len(prof),1)
 
+
 class ImageTestClass(TestCase):
     def setUp(self):
-        #set up user class
-        self.new_user = User(username="liz",email="elizabethichanga@yahoo.com")
-        self.new_user.save()
+   
         #set up for profile class
-        self.new_profile=Profile(bio="I am awesome",user=self.new_user)
+        self.new_profile=Profile(bio="I am awesome")
         self.new_profile.save()
         #set up for Image class
         self.flower=Image(caption="legacy goals",likes=200,profile=self.new_profile)
@@ -80,3 +79,5 @@ class ImageTestClass(TestCase):
 
     def test_get_image_by_id(self):
         pass
+
+

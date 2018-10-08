@@ -1,31 +1,32 @@
 {% extends 'base.html'%} {% load bootstrap3 %} {% load static %} {% block content %} {{block.super}}
-<div class="container mt-5"></div>
-<div class="container mt-5">
-  <div class="container">
-    <div class="row mt-5"></div>
-    <div class="row mt-5"></div>
+<div class="container">
+
+ 
     <div class="row mt-5">
 
       {% for prof in profile %} {% if my_user.id == prof.user.id %}
-      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
-      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="conainer">
+      <div class="row">
         {% if prof.profilePic %}
-        <img src="{{prof.profilePic.url}}" alt="" class="img-fluid" style="border-radius:50%"> {% else %}
-        <img src="/static/img/avatar.png" alt="" class="img-fluid rounded-circle"> {% endif %}
+        <img src="{{prof.profilePic.url}}" alt="" class="img" style="border-radius:30%; width: 30px; height: 30px;"> 
+       {% endif %}
       </div>
-      <div class="col-lg-1 col-md-1 col-xs-1 col-sm-1"></div>
+    </div>
+    
+  
       <div class="col-lg-5 col-md-5 col-xs-5 col-sm-5">
         {% if prof.bio %}
-        <h5>{{prof.user.username | title}}  <button class="btn btn-primary" href="#">Follow</button></h5>
+        <h5>{{prof.user.username | title}}  <button class="btn btn-primary" href="/">Follow</button></h5>
         <p>{{prof.bio}}</p>
         {% else %}
         <h5>{{prof.user.username | title}}</h5> {% endif %}
       </div>
-      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1"></div>
+   
       {% endif %} {% endfor %}
     </div>
   </div>
 </div>
+
 <hr>
 <div class="container">
   <div class="row">
@@ -34,7 +35,8 @@
       {% if img.image %}
       <div class="card">
         <div class="card-header">
-          <img src="{{img.profile.profilePic.url}}" class="img-fluid rounded-circle" style="width:8%;height:8%"> {% if user.id == img.user.id %}
+          <img src="{{img.profile.profilePic.url}}" class="img-fluid rounded-circle" style="width:8%;height:8%">
+           {% if user.id == img.user.id %}
           <a href="{% url 'profile' %}">{{img.user.username}}</a> {% else %}
           <a href="#">{{img.user.username}}</a> {% endif %}
         </div>

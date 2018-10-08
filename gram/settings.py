@@ -131,6 +131,18 @@ EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'showcasetalanta@gmail.com'
+EMAIL_HOST_PASSWORD = 'Talanta12345'
+SECRET_KEY='9v=bzqgy)4a=09r)9=w#wuslp&8pvyyb&7laazas!)p7jpn^zl'
+DEBUG=True
+
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
