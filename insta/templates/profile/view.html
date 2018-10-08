@@ -7,22 +7,20 @@
       {% for prof in profile %} {% if my_user.id == prof.user.id %}
       <div class="conainer">
       <div class="row">
-        {% if prof.profilePic %}
-        <img src="{{prof.profilePic.url}}" alt="" class="img" style="border-radius:30%; width: 30px; height: 30px;"> 
-       {% endif %}
-      </div>
-    </div>
-    
+      
   
       <div class="col-lg-5 col-md-5 col-xs-5 col-sm-5">
-        {% if prof.bio %}
-        <h5>{{prof.user.username | title}}  <button class="btn btn-primary" href="/">Follow</button></h5>
+  
+        <h5>{{prof.user.username | title}}  <button class="btn btn-primary" href="{% url 'home' %}">Follow</button></h5>
         <p>{{prof.bio}}</p>
-        {% else %}
+   
         <h5>{{prof.user.username | title}}</h5> {% endif %}
       </div>
-   
-      {% endif %} {% endfor %}
+
+    </div>
+  </div>
+  
+    {% endfor %}
     </div>
   </div>
 </div>
@@ -46,7 +44,7 @@
           <p>{{img.caption}}</p>
           <p>{{img.upload_date | timesince}} ago</p>
           {% if img.likes >= 1 %}
-          <p><i class="fa fa-heart fa-2x ml-4" style="color:rosybrown"></i><b>{{img.likes}} likes</b></p>
+          <p><i class="fa fa-heart fa-2x ml-4" style="color:red;"></i><b>{{img.likes}} likes</b></p>
           {% endif %} {% endif %}
         </div>
         <div class="card-footer">
