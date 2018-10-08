@@ -57,5 +57,5 @@ This project is licensed under the MIT License
 
 ## Acknowledgments
 
-Technical mentors 
-Moringa School
+> Technical mentors
+> Moringa School
