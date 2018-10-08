@@ -9,10 +9,10 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
-
 import os
-from decouple import config
+import django_heroku
 import dj_database_url
+from decouple import config, Csv
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     # 'insta',
-    
+
     'insta.apps.InstaConfig',
     'bootstrap3',
     'django.contrib.admin',
@@ -47,12 +47,10 @@ INSTALLED_APPS = [
 ]
 
 
-
 # MIDDLEWARE_CLASSES = (
 #     # Simplified static file serving.
 #     # https://warehouse.python.org/project/whitenoise/
 #     'whitenoise.middleware.WhiteNoiseMiddleware',
-
 
 
 MIDDLEWARE = [
@@ -89,25 +87,25 @@ WSGI_APPLICATION = 'instagram.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
-if config('MODE')=="dev":
-       DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
-       }
-       
-   }
+if config('MODE') == "dev":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': '',
+        }
+
+    }
 # production
 else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
 
 # DATABASES = {
 #     'default': {
@@ -119,7 +117,6 @@ else:
 # }
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
-
 
 
 # Password validation
@@ -141,8 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-#Email cofigurations
+# Email cofigurations
 from decouple import config
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
 EMAIL_HOST = config('EMAIL_HOST')
@@ -151,15 +147,13 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 
 
-
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'showcasetalanta@gmail.com'
 EMAIL_HOST_PASSWORD = 'Talanta12345'
-SECRET_KEY='9v=bzqgy)4a=09r)9=w#wuslp&8pvyyb&7laazas!)p7jpn^zl'
-DEBUG=True
-
+SECRET_KEY = '9v=bzqgy)4a=09r)9=w#wuslp&8pvyyb&7laazas!)p7jpn^zl'
+DEBUG = True
 
 
 # Internationalization
