@@ -1,2 +1,2 @@
-web: gunicorn koyooinstagram.wsgi --log-file -
+web: gunicorn instagram.wsgi --log-file -
 
