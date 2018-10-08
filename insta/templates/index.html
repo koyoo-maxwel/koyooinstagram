@@ -1,11 +1,10 @@
 {% extends 'base.html' %} {% load bootstrap3 %} {% block content %} {{block.super}}
 <div class="container mt-5">
-  <div class="row mt-3"></div>
-  <div class="row mt-5">
-    <div class="col-md-2 col-lg-2 col-xs-1 col-sm-1"></div>
+
+  
 
     <div class="col-md-4 col-lg-4 col-xs-4 col-sm-4">
-      <p>Hello <b>{{user | title}}</b> are you new here? <a href="{% url 'edit' %}" class="btn btn-primary">Create Profile</a> Before you continue.</p>
+      <p>Hello <b>{{user | title}}</b> are you new to instagram? <a href="{% url 'edit' %}" class="btn btn-primary">Create Profile</a> Before you continue.</p>
       {% for img in images %} {% if img.image %}
       <div class="card">
         <div class="card-header">
@@ -45,7 +44,7 @@
       {% endif %}
       <br><br> {% endfor %}
     </div>
-    <div class="col-md-2 col-lg-2 col-xs-1 col-sm-1"></div>
+
   </div>
 
 </div>

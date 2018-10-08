@@ -138,3 +138,13 @@ def like(request,operation,pk):
         image.likes -= 1
         image.save()
     return redirect('home')
+
+
+
+@login_required(login_url="/accounts/login/")
+def settings(request):
+    title = 'Instagram'
+    current_user = request.user
+    return render(request,'profile/settings.html',{"settings":settings,
+                                                    "title":title,})
+

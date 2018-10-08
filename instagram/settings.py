@@ -84,8 +84,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         'NAME': 'instagram',
-        'USER': 'elizabeth',
-        'PASSWORD': 'leezie',
+        'USER': 'student',
+        'PASSWORD': '1209',
     }
 }
 db_from_env = dj_database_url.config(conn_max_age=500)
