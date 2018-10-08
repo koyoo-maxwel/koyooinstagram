@@ -115,7 +115,6 @@ def new_comment(request,pk):
 
 @login_required(login_url="/accounts/login/")
 def view_your_profile(request,pk):
-    title =  "Instagram"
     current_user = request.user
     image = Image.get_images()
     profile = Profile.get_profile()
