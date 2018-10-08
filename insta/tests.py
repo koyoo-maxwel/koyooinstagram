@@ -2,7 +2,7 @@ from django.test import TestCase
 from .models import Image,Profile,Comment
 from django.contrib.auth.models import User
 
-# Create your tests here.
+# run my test and confirm they work.
 class ProfileTestClass(TestCase):
     #setup method
     def setUp(self):
@@ -10,10 +10,10 @@ class ProfileTestClass(TestCase):
         self.new_user = User(username="koyoo",email="koyoomaxwel@gmail.com")
         self.new_user.save()
         #set up profile class
-        self.profile=Profile(bio="Feeling natural",user=self.new_user)
+        self.profile=Profile(bio="yes am Dev koyoo maxwel",user=self.new_user)
         self.profile.save_profile()
 
-        # self.user.add(self.liz)
+        # self.user.add(self.koyoo)
 
     def tearDown(self):
         User.objects.all().delete()
@@ -49,10 +49,10 @@ class ImageTestClass(TestCase):
     def setUp(self):
    
         #set up for profile class
-        self.new_profile=Profile(bio="I am awesome")
+        self.new_profile=Profile(bio=" my name is maxwel")
         self.new_profile.save()
         #set up for Image class
-        self.flower=Image(caption="legacy goals",likes=200,profile=self.new_profile)
+        self.flower=Image(caption="nairobi",likes=200,profile=self.new_profile)
         self.flower.save_image()
 
     def tearDown(self):
@@ -80,4 +80,8 @@ class ImageTestClass(TestCase):
     def test_get_image_by_id(self):
         pass
 
+
+class CommentTestClass(TestCase):
+    def setUp(self):
+        
 

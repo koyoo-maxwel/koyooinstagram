@@ -68,7 +68,7 @@ class Image(models.Model):
 
 
 class Comment(models.Model):
-    comments = models.CharField(max_length=60,blank=True,null=True)
+    comments = models.CharField(max_length=200,blank=True,null=True)
     comment_date = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User)
     image = models.ForeignKey(Image,on_delete=models.CASCADE)
