@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="{% static 'css/nav.css' %}"> {% if user.is_authenticated %}
-<nav class="navbar fixed-top" style="background-color:sienna;">
+<nav class="navbar fixed-top" style="background-color:sienna; position: fixed;">
   <section class="logo-section"><img class="logo" src="https://seeklogo.com/images/I/instagram-new-2016-glyph-logo-84CB825424-seeklogo.com.png" />
     <div></div><a href="{% url 'home' %}"><img class="logoname" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/200px-Instagram_logo.svg.png" /></a>
   </section>
